@@ -22,7 +22,7 @@ const Register = () => {
     try {
       await axios
         .post(
-          "http://localhost:4000/api/v1/user/patient/register",
+          `${import.meta.env.VITE_API_BASE_URL}/user/patient/register`,
           { firstName, lastName, email, phone, dob, gender, password },
           {
             withCredentials: true,
@@ -118,7 +118,7 @@ const Register = () => {
           >
             <p style={{ marginBottom: 0 }}>Already Registered?</p>
             <Link
-              to={"/signin"}
+              to={"/login"}
               style={{ textDecoration: "none", color: "#271776ca" }}
             >
               Login Now

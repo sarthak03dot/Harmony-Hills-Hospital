@@ -8,6 +8,7 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [role, setRole] = useState("Admin");
 
   const { isAuthenticated, setIsAuthenticated } = useContext(Context);
 
@@ -18,8 +19,8 @@ const Login = () => {
     try {
       await axios
         .post(
-          "http://localhost:4000/api/v1/user/login",
-          { email, password, confirmPassword, role: "Admin" },
+          `${import.meta.env.VITE_API_BASE_URL}/user/login`,
+          { email, password, confirmPassword, role },
           {
             withCredentials: true,
             headers: { "Content-Type": "application/json" },
@@ -32,6 +33,7 @@ const Login = () => {
           setEmail("");
           setPassword("");
           setConfirmPassword("");
+          setRole("Admin");
         });
     } catch (error) {
       toast.error(error.response.data.message);
@@ -46,8 +48,8 @@ const Login = () => {
     <>
       <section className="container form-component">
         <img src="/logo.png" alt="logo" className="logo" />
-        <h1 className="form-title">WELCOME TO ZeeCare</h1>
-        <p>Only Admins Are Allowed To Access These Resources!</p>
+        <h1 className="form-title">WELCOME TO Harmony Hills Hospital</h1>
+        <p>Login as an Admin or Doctor to Access These Resources!</p>
         <form onSubmit={handleLogin}>
           <input
             type="text"
@@ -67,6 +69,10 @@ const Login = () => {
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
           />
+          <select value={role} onChange={(e) => setRole(e.target.value)}>
+            <option value="Admin">Admin</option>
+            <option value="Doctor">Doctor</option>
+          </select>
           <div style={{ justifyContent: "center", alignItems: "center" }}>
             <button type="submit">Login</button>
           </div>

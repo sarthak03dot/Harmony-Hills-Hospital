@@ -8,9 +8,10 @@ import { errorMiddleware } from "./middlewares/error.js";
 import messageRouter from "./router/messageRouter.js";
 import userRouter from "./router/userRouter.js";
 import appointmentRouter from "./router/appointmentRouter.js";
+import adminRouter from "./AdminPannel/adminRouter.js";
 
 const app = express();
-config({ path: "./config/config.env"});
+config({ path: "./config/config.env" });
 
 app.use(
   cors({
@@ -33,6 +34,7 @@ app.use(
 app.use("/api/v1/message", messageRouter);
 app.use("/api/v1/user", userRouter);
 app.use("/api/v1/appointment", appointmentRouter);
+app.use("/api/v1/admin", adminRouter);
 
 dbConnection();
 

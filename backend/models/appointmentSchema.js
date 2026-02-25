@@ -21,8 +21,8 @@ const appointmentSchema = new mongoose.Schema({
   phone: {
     type: String,
     required: [true, "Phone Is Required!"],
-    minLength: [11, "Phone Number Must Contain Exact 11 Digits!"],
-    maxLength: [11, "Phone Number Must Contain Exact 11 Digits!"],
+    minLength: [10, "Phone Number Must Contain Exact 10 Digits!"],
+    maxLength: [10, "Phone Number Must Contain Exact 10 Digits!"],
   },
   dob: {
     type: Date,
@@ -73,6 +73,14 @@ const appointmentSchema = new mongoose.Schema({
     enum: ["Pending", "Accepted", "Rejected"],
     default: "Pending",
   },
+  prescription: {
+    type: String,
+    default: "",
+  },
+  doctorNotes: {
+    type: String,
+    default: "",
+  }
 });
 
 export const Appointment = mongoose.model("Appointment", appointmentSchema);

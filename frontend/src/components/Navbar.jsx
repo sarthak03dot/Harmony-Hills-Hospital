@@ -11,7 +11,7 @@ const Navbar = () => {
 
   const handleLogout = async () => {
     await axios
-      .get("http://localhost:4000/api/v1/user/patient/logout", {
+      .get(`${import.meta.env.VITE_API_BASE_URL}/user/patient/logout`, {
         withCredentials: true,
       })
       .then((res) => {
@@ -46,6 +46,16 @@ const Navbar = () => {
             <Link to={"/about"} onClick={() => setShow(!show)}>
               About Us
             </Link>
+            {isAuthenticated && (
+              <>
+                <Link to={"/my-appointments"} onClick={() => setShow(!show)}>
+                  My Appointments
+                </Link>
+                <Link to={"/profile"} onClick={() => setShow(!show)}>
+                  My Profile
+                </Link>
+              </>
+            )}
           </div>
           {isAuthenticated ? (
             <button className="logoutBtn btn" onClick={handleLogout}>
