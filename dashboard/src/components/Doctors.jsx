@@ -11,7 +11,7 @@ const Doctors = () => {
     const fetchDoctors = async () => {
       try {
         const { data } = await axios.get(
-          "http://localhost:4000/api/v1/user/doctors",
+          `${import.meta.env.VITE_API_BASE_URL}/user/doctors`,
           { withCredentials: true }
         );
         setDoctors(data.doctors);
@@ -32,13 +32,19 @@ const Doctors = () => {
         {doctors && doctors.length > 0 ? (
           doctors.map((element) => {
             return (
-              <div className="card">
-                <img
-                  src={element.docAvatar && element.docAvatar.url}
-                  alt="doctor avatar"
-                />
+              <div className="card" key={element._id}>
+                <div className="img-container">
+                  <img
+                    src={element.docAvatar && element.docAvatar.url ? element.docAvatar.url : "/doc.png"}
+                    alt="doctor avatar"
+                  />
+                </div>
                 <h4>{`${element.firstName} ${element.lastName}`}</h4>
                 <div className="details">
+                  <p>
+                    Department: <span>{element.doctorDepartment}</span>
+                  </p>
+                  <hr style={{ margin: "10px 0", borderTop: "1px solid #eee" }} />
                   <p>
                     Email: <span>{element.email}</span>
                   </p>
@@ -47,9 +53,6 @@ const Doctors = () => {
                   </p>
                   <p>
                     DOB: <span>{element.dob.substring(0, 10)}</span>
-                  </p>
-                  <p>
-                    Department: <span>{element.doctorDepartment}</span>
                   </p>
                   <p>
                     Gender: <span>{element.gender}</span>

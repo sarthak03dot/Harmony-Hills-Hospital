@@ -1,14 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  overflow-x: hidden;
   font-family: "Montserrat", sans-serif;
 }
+
 body {
   background: #e5e5e5;
+  overflow-x: hidden;
 }
+
 .btn {
   padding: 7px 20px;
   border-radius: 12px;
@@ -16,62 +19,76 @@ body {
   font-weight: bold;
   letter-spacing: 2px;
 }
+
 .white-btn {
   background: #fff;
   color: #111;
 }
+
 .purple-btn {
   background: #9083d5;
   color: #fff;
 }
+
 p,
 span,
 a {
   font-size: 20px;
 }
+
 h1 {
   font-size: 36px;
   font-weight: 900;
 }
+
 h1 {
   font-size: 36px;
   font-weight: 900;
 }
+
 h2 {
   font-size: 32px;
   font-weight: 900;
 }
+
 h3 {
   font-size: 28px;
   font-weight: 900;
 }
+
 h4 {
   font-size: 24px;
   font-weight: 900;
 }
+
 h5,
 h6 {
   font-size: 24px;
   font-weight: 700;
 }
+
 @media (max-width: 1186px) {
   h1 {
     font-size: 32px;
     font-weight: 900;
   }
+
   h2 {
     font-size: 30px;
     font-weight: 900;
   }
 }
+
 .container {
   padding: 0 100px;
 }
+
 @media (max-width: 700px) {
   .container {
     padding: 0 20px;
   }
 }
+
 .hero {
   display: flex;
   gap: 50px;
@@ -79,40 +96,48 @@ h6 {
   padding-bottom: 120px;
   position: relative;
 }
+
 .hero .banner {
   flex: 1;
 }
+
 .hero .banner h1,
 .hero .banner p {
   max-width: 650px;
 }
+
 .hero .banner h1 {
   letter-spacing: 2px;
   word-spacing: 5px;
   font-size: 40px;
 }
+
 .hero .banner p {
   color: #111;
   letter-spacing: 2px;
 }
+
 .hero .banner span {
   position: absolute;
   right: -300px;
   top: -200px;
   z-index: -1;
 }
+
 .hero .banner:first-child {
   display: flex;
   justify-content: center;
   flex-direction: column;
   gap: 50px;
 }
+
 .hero .banner:last-child {
   display: flex;
   justify-content: center;
   align-items: center;
   overflow-y: hidden;
 }
+
 .animated-image {
   animation: moveUpDown 1s infinite alternate ease-in-out;
 }
@@ -121,62 +146,75 @@ h6 {
   0% {
     transform: translateY(0);
   }
+
   100% {
     transform: translateY(20px);
   }
 }
+
 @media (max-width: 1186px) {
   .hero .banner span {
     right: -400px;
   }
+
   .hero .banner h1 {
     font-size: 32px;
   }
 }
+
 @media (max-width: 1085px) {
   .hero .banner span {
     right: -480px;
     top: -315px;
   }
 }
+
 @media (max-width: 925px) {
   .hero {
     flex-direction: column;
   }
+
   @media (max-width: 700px) {
     .hero {
       padding-bottom: 40px;
     }
   }
 }
+
 .form-component {
   padding-top: 40px;
   padding-bottom: 60px;
 }
+
 .form-component h2 {
   color: gray;
   letter-spacing: 4px;
   margin-bottom: 30px;
 }
+
 .form-component h4 {
   color: gray;
   font-weight: 700;
   margin-bottom: 20px;
 }
+
 .form-component p {
   max-width: 750px;
   color: gray;
   margin-bottom: 20px;
 }
+
 .form-component form {
   display: flex;
   flex-direction: column;
   gap: 30px;
 }
+
 .form-component form div {
   display: flex;
   gap: 30px;
 }
+
 .form-component form input,
 .form-component form select,
 .form-component form textarea {
@@ -186,6 +224,7 @@ h6 {
   border-radius: 7px;
   border: 1px solid gray;
 }
+
 .form-component button {
   padding: 10px 35px;
   color: #fff;
@@ -197,54 +236,70 @@ h6 {
   margin-bottom: 30px;
   background: linear-gradient(140deg, #9083d5, #271776ca);
 }
+
 .form-component .wrapper {
   display: flex;
   gap: 50px;
 }
+
 .form-component .wrapper .banner {
   flex: 1;
 }
+
 .form-component .wrapper .banner:last-child {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .form-component .wrapper .banner:last-child img {
   max-width: 450px;
 }
+
 .login-form {
-  margin: 100px auto 20px auto;
+  padding-top: 120px;
+  margin: 0 auto 20px auto;
   max-width: 800px;
   text-align: center;
 }
+
 .register-form {
+  padding-top: 120px;
   max-width: 1200px;
-  margin: 100px auto 20px auto;
+  margin: 0 auto 20px auto;
 }
+
 .login-form h2 {
   color: #000;
 }
+
 .register-form h2 {
   color: #000;
 }
+
 @media (max-width: 1110px) {
   .appointment-form form div:nth-child(4) {
     flex-direction: column;
   }
+
   .appointment-form form div:nth-child(5) {
     flex-direction: column;
   }
 }
+
 @media (max-width: 888px) {
   .form-component {
     padding-top: 30px;
     padding-bottom: 30px;
   }
+
   .form-component form div {
     flex-direction: column;
   }
 }
+
 @media (max-width: 667px) {
+
   .form-component form input,
   .form-component form select,
   .form-component form textarea {
@@ -252,45 +307,54 @@ h6 {
     padding: 10px;
   }
 }
+
 .biography {
   display: flex;
   gap: 50px;
   padding-top: 40px;
   padding-bottom: 60px;
 }
+
 .biography .banner:first-child {
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .biography .banner:last-child {
   flex: 1;
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
+
 .biography .banner h3 {
   font-weight: 700;
   letter-spacing: 3px;
 }
+
 .biography .banner p:first-child {
   font-size: 24px;
   letter-spacing: 2px;
 }
+
 @media (max-width: 925px) {
   .biography {
     flex-direction: column-reverse;
   }
 }
+
 .message-form {
   position: relative;
 }
+
 .message-form h2 {
   text-align: center;
   color: #000;
   position: relative;
 }
+
 .message-form img {
   position: absolute;
   top: 0;
@@ -298,6 +362,7 @@ h6 {
   height: 600px;
   z-index: -1;
 }
+
 @media (max-width: 700px) {
   .message-form img {
     right: -35%;
@@ -305,42 +370,53 @@ h6 {
     top: 10%;
   }
 }
+
 footer {
   padding-bottom: 30px !important;
 }
+
 footer hr {
   margin-bottom: 30px;
 }
+
 footer .content {
   display: flex;
   gap: 20px;
 }
+
 footer .content div {
   flex: 1;
 }
+
 footer .content div:nth-child(3) {
   flex: 2;
 }
+
 footer .content div h4 {
   font-weight: 700;
   margin-bottom: 20px;
 }
+
 footer .content div ul {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
+
 footer .content div ul a {
   color: gray;
   text-decoration: none;
 }
+
 footer .content div ul a:hover {
   color: #8570ed;
   transition: 0.3s;
 }
+
 footer .content div ul li span {
   color: gray;
 }
+
 footer .content div ul li span:first-child {
   width: 150px;
   display: inline-block;
@@ -352,14 +428,17 @@ footer .content div:last-child div {
   gap: 12px;
   margin-bottom: 10px;
 }
+
 footer .content div:last-child div svg {
   font-size: 24px;
 }
+
 @media (max-width: 1135px) {
   footer .content {
     flex-wrap: wrap;
     justify-content: space-between;
   }
+
   footer .content div,
   footer .content div:nth-child(3) {
     flex: none;
@@ -367,15 +446,18 @@ footer .content div:last-child div svg {
     margin-bottom: 30px;
   }
 }
+
 @media (max-width: 900px) {
   footer {
     padding-bottom: 0 !important;
   }
+
   footer .content div,
   footer .content div:nth-child(3) {
     width: 100%;
   }
 }
+
 @media (max-width: 390px) {
   footer .content div:nth-child(3) ul li {
     display: flex;
@@ -387,10 +469,12 @@ footer .content div:last-child div svg {
   padding-top: 30px;
   padding-bottom: 50px;
 }
+
 .departments h2 {
   color: gray;
   margin-bottom: 30px;
 }
+
 .card {
   position: relative;
   border-radius: 8px;
@@ -405,6 +489,7 @@ footer .content div:last-child div svg {
   margin: 0 10px;
   text-decoration: none;
 }
+
 .card img {
   position: absolute;
   width: 100%;
@@ -413,6 +498,7 @@ footer .content div:last-child div svg {
   top: 0;
   left: 0;
 }
+
 .card .depart-name {
   margin-bottom: 30px;
   background: #e5e5e5;
@@ -442,24 +528,29 @@ nav {
   padding-bottom: 20px !important;
   z-index: 2;
 }
+
 nav .logo {
   flex: 1;
   display: flex;
   align-items: center;
   font-size: 2rem;
 }
+
 nav .navLinks {
   flex: 2;
 }
+
 nav .navLinks {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
 nav .navLinks .links {
   display: flex;
   gap: 25px;
 }
+
 nav .navLinks .links a {
   text-decoration: none;
   color: #222;
@@ -467,11 +558,13 @@ nav .navLinks .links a {
   font-weight: 600;
   letter-spacing: 1.4px;
 }
+
 nav .navLinks .links a:hover {
   color: #000;
   transition: 0.3s;
   cursor: pointer;
 }
+
 nav .btn {
   padding: 8px 20px;
   color: #e5e5e5;
@@ -482,24 +575,30 @@ nav .btn {
   font-weight: 600;
   z-index: 2;
 }
+
 nav .logoutBtn {
   background: linear-gradient(135deg, black, rgb(49, 49, 49));
 }
+
 nav .loginBtn {
   background: linear-gradient(135deg, black, rgb(49, 49, 49));
 }
+
 nav .hamburger {
   display: none;
 }
+
 nav svg {
   font-size: 1.75rem;
 }
+
 @media (max-width: 1520px) {
   nav {
     min-width: 100%;
     padding: 25px 20px 40px 20px;
   }
 }
+
 @media (max-width: 1100px) {
   nav {
     background: #ffffffbf;
@@ -507,9 +606,11 @@ nav svg {
     top: 0;
     left: 0;
   }
+
   nav .hamburger {
     display: flex;
   }
+
   nav .navLinks {
     display: flex;
     flex-direction: column;
@@ -524,6 +625,7 @@ nav svg {
     background: #ffffffbf;
     top: 79px;
   }
+
   nav .showmenu {
     display: flex;
     flex-direction: column;
@@ -538,22 +640,27 @@ nav svg {
     background: #ffffffbf;
     top: 79px;
   }
+
   nav .navLinks .links {
     flex-direction: column;
     text-align: center;
   }
+
   nav .navLinks .links a {
     font-weight: 700;
   }
+
   nav .logoutBtn {
     margin-top: 20px;
   }
 }
+
 @media (max-width: 800px) {
   nav .showmenu {
     width: 96vw;
   }
 }
+
 @media (max-width: 650px) {
   nav .showmenu {
     margin: 0;
@@ -561,10 +668,12 @@ nav svg {
     border-radius: 0;
   }
 }
+
 @media (max-width: 555px) {
   nav {
     background: #fff;
   }
+
   nav .navLinks {
     background: #fff;
     width: 100%;
@@ -576,14 +685,95 @@ input[type="date"]:before {
   color: #444;
   margin-right: 0.5em;
 }
+
 input[type="time"]:before {
   content: attr(placeholder);
   color: #444;
   margin-right: 0.5em;
 }
-.logo-img{
+
+.logo-img {
   width: 150px;
 }
-footer .logo-img{
+
+footer .logo-img {
   width: 100%;
+}
+
+/* Table Styles for My Appointments */
+.banner table {
+  width: 100%;
+  color: #111;
+  font-size: 20px;
+  border-collapse: collapse;
+}
+
+.banner table td svg {
+  display: flex;
+  margin: 0 auto;
+}
+
+.banner table td .green {
+  font-size: 20px;
+  color: #16a34a;
+}
+
+.banner table td .red {
+  font-size: 20px;
+  color: #dc2626;
+}
+
+.banner table thead {
+  text-align: left;
+  padding: 12px 0;
+  border-bottom: 2px solid #ccc;
+}
+
+.banner table thead th {
+  padding: 12px 10px;
+}
+
+.banner table tbody td {
+  padding: 12px 10px;
+  border-bottom: 1px solid #eee;
+}
+
+/* Patient Profile Styles */
+.profile-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  padding: 40px;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.profile-card h2 {
+  margin-bottom: 30px;
+  text-align: center;
+  color: #271776ca;
+  letter-spacing: 2px;
+}
+
+.profile-row {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 15px 0;
+  align-items: center;
+}
+
+.profile-label {
+  font-weight: bold;
+  color: #555;
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.profile-value {
+  font-size: 20px;
+  color: #111;
 }

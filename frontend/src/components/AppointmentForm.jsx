@@ -32,12 +32,15 @@ const AppointmentForm = () => {
   const [doctors, setDoctors] = useState([]);
   useEffect(() => {
     const fetchDoctors = async () => {
-      const { data } = await axios.get(
-        "http://localhost:4000/api/v1/user/doctors",
-        { withCredentials: true }
-      );
-      setDoctors(data.doctors);
-      console.log(data.doctors);
+      try {
+        const { data } = await axios.get(
+          `${import.meta.env.VITE_API_BASE_URL}/user/doctors`,
+          { withCredentials: true }
+        );
+        setDoctors(data.doctors);
+      } catch (error) {
+        console.error("Error fetching doctors:", error);
+      }
     };
     fetchDoctors();
   }, []);
@@ -46,7 +49,7 @@ const AppointmentForm = () => {
     try {
       const hasVisitedBool = Boolean(hasVisited);
       const { data } = await axios.post(
-        "http://localhost:4000/api/v1/appointment/post",
+        `${import.meta.env.VITE_API_BASE_URL}/appointment/post`,
         {
           firstName,
           lastName,
@@ -156,11 +159,19 @@ const AppointmentForm = () => {
               })}
             </select>
             <select
-              value={`${doctorFirstName} ${doctorLastName}`}
+              value={`${doctorFirstName} ${doctorLastName}` === " " ? "" : `${doctorFirstName} ${doctorLastName}`}
               onChange={(e) => {
-                const [firstName, lastName] = e.target.value.split(" ");
-                setDoctorFirstName(firstName);
-                setDoctorLastName(lastName);
+                const selectedDoctor = doctors.find(
+                  (doctor) =>
+                    `${doctor.firstName} ${doctor.lastName}` === e.target.value
+                );
+                if (selectedDoctor) {
+                  setDoctorFirstName(selectedDoctor.firstName);
+                  setDoctorLastName(selectedDoctor.lastName);
+                } else {
+                  setDoctorFirstName("");
+                  setDoctorLastName("");
+                }
               }}
               disabled={!department}
             >
