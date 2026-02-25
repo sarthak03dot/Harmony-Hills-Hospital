@@ -1,5 +1,11 @@
 # Hospital Management System
 
+
+  # Dashboard: ```https://harmony-hills-hospital-dashboard.onrender.com```
+  # Patient: ```https://harmony-hills-hospital.onrender.com```
+
+
+
 ## sample
 ![Image](https://github.com/user-attachments/assets/2ee2c292-2dbb-41fa-955a-4a7839326f23)
 
@@ -53,8 +59,10 @@ A hospital management system developed using the MERN stack (MongoDB, Express, R
 1. **Clone the repository**:
 
    ```bash
-   git clone https://github.com/sarthak03dot/hospital-management.git
-   cd hospital-management
+   git clone https://github.com/sarthak03dot/Harmony-Hills-Hospital.git
+   cd Harmony-Hills-Hospital
+
+   ```
 
 
 
